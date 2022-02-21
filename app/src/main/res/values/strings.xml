@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="review1">отзывов</string>
+    <string name="review2">отзыв</string>
+    <string name="review3">отзыва</string>
+</resources>
