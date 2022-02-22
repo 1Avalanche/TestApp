@@ -1,20 +1,16 @@
-package com.example.testapp.ui.item_screen.components
+package com.example.testapp.ui.product_screen.components
 
-import android.graphics.drawable.shapes.Shape
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.testapp.ui.item_screen.ItemTag
-import com.example.testapp.ui.item_screen.TagType
+import com.example.testapp.ui.product_screen.ItemTag
+import com.example.testapp.ui.product_screen.TagType
 import com.example.testapp.ui.theme.TestAppTheme
 
 @Composable

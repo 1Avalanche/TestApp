@@ -1,4 +1,4 @@
-package com.example.testapp.ui.item_screen.components
+package com.example.testapp.ui.product_screen.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -7,11 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.testapp.R
-import com.example.testapp.ui.item_screen.ProductTitleWithMainInfo
+import com.example.testapp.ui.product_screen.ProductTitleWithMainInfo
 import kotlin.math.roundToInt
 
 @Composable

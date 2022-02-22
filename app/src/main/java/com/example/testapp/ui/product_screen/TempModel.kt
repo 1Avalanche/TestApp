@@ -1,4 +1,4 @@
-package com.example.testapp.ui.item_screen
+package com.example.testapp.ui.product_screen
 
 class TempModel {
 }

@@ -8,9 +8,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.testapp.ui.item_screen.components.ItemPagerWithTags
-import com.example.testapp.ui.item_screen.components.imageList
-import com.example.testapp.ui.item_screen.components.list
+import com.example.testapp.ui.product_screen.components.ItemPagerWithTags
+import com.example.testapp.ui.product_screen.components.imageList
+import com.example.testapp.ui.product_screen.components.list
 import com.example.testapp.ui.theme.TestAppTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
