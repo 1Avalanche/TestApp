@@ -44,7 +44,7 @@ object ProductItemMapper {
             id = product.id,
             title = product.title ?: TestApp().get()?.resources?.getString(R.string.unknown_title) ?: "",
             vendorCode = product.vendorCode ?: TestApp().get()?.resources?.getString(R.string.unknown_vendorcode) ?: "",
-            image = product.imageList?.get(0) ?: com.example.testapp.R.drawable.item_placeholder,
+            image = product.imageList?.get(0) ?: R.drawable.item_placeholder,
             priceForOne = product.prise?.priceForOne ?: -1F,
             stockCount = product.stockCount ?: -1,
         )

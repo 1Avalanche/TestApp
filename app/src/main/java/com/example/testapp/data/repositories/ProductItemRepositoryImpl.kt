@@ -5,8 +5,9 @@ import com.example.testapp.domain.entities.ProductItem
 import com.example.testapp.domain.entities.ProductSupply
 import com.example.testapp.domain.entities.Review
 import com.example.testapp.domain.repositories.ProductItemRepository
+import javax.inject.Inject
 
-class ProductItemRepositoryImpl(
+class ProductItemRepositoryImpl @Inject constructor(
     private val localeDataSource: ProductItemLocaleDataSource,
     private val remoteDataSource: ProductItemRemoteDataSource
 ) : ProductItemRepository {

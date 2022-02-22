@@ -1,7 +1,5 @@
 package com.example.testapp.domain.entities
 
-import com.example.testapp.ui.item_screen.ItemTag
-
 data class ProductItem(
     val id: Int,
     val title: String?,

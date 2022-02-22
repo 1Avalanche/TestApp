@@ -4,7 +4,6 @@ import com.example.testapp.domain.common.ResponseWrapper
 import com.example.testapp.domain.entities.Price
 import com.example.testapp.domain.entities.ProductItem
 import com.example.testapp.domain.entities.Review
-import kotlin.math.PI
 
 class ProductItemRemoteDataSourceImpl : ProductItemRemoteDataSource {
     override suspend fun getProduct(id: Int): ResponseWrapper<ProductItem?> {
