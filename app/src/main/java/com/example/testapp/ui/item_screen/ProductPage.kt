@@ -11,7 +11,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 
 @ExperimentalPagerApi
 @Composable
-fun ItemScreen() {
+fun ProductPage() {
 
     LazyColumn(Modifier.fillMaxWidth()) {
         item {ItemPagerWithTags(imageList, list)}

@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">TestApp</string>
-    <string name="review1">отзывов</string>
-    <string name="review2">отзыв</string>
-    <string name="review3">отзыва</string>
+
+    <string name="review1">%1$s отзывов</string>
+    <string name="review2">%1$s отзыв</string>
+    <string name="review3">%1$s отзыва</string>
+
+<!--    placeholders-->
+    <string name="unknown_title">Назване неизвестно</string>
+    <string name="unknown_vendorcode">Назване неизвестно</string>
+    <string name="unknown_barcode">Назване неизвестно</string>
+    <string name="unknown">неизвестно</string>
+
 </resources>
