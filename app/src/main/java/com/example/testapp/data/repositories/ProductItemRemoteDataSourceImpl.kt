@@ -1,9 +1,7 @@
 package com.example.testapp.data.repositories
 
 import com.example.testapp.domain.common.ResponseWrapper
-import com.example.testapp.domain.entities.Price
-import com.example.testapp.domain.entities.ProductItem
-import com.example.testapp.domain.entities.Review
+import com.example.testapp.domain.entities.*
 
 class ProductItemRemoteDataSourceImpl : ProductItemRemoteDataSource {
     override suspend fun getProduct(id: Int): ResponseWrapper<ProductItem?> {
@@ -27,7 +25,7 @@ object MockData {
         vendorCode = "ЛМ 18218850",
         barcode = "4630 075 622 652",
         imageList = listOf(com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo),
-        tagsList = listOf("Гамма А", "Топ - 1", "12 - Отделочные материалы"),
+        tagsList = listOf(ItemTag("Гамма А",TagType.COLOR_TYPE), ItemTag("Топ - 1", TagType.TOP), ItemTag("12 - Отделочные материалы", TagType.CATEGORY)),
         ratio = 4.5F,
         countOfReview = 275,
         prise = Price(1743F, "22.02.21", 161.6F),
@@ -42,7 +40,7 @@ object MockData {
         vendorCode = "ЛМ 18218850",
         barcode = "4630 075 622 652",
         imageList = listOf(com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo), //изменить
-        tagsList = listOf("Гамма А", "Топ - 1", "12 - Отделочные материалы"),
+        tagsList = listOf(ItemTag("Гамма А",TagType.COLOR_TYPE), ItemTag("Топ - 1", TagType.TOP), ItemTag("12 - Отделочные материалы", TagType.CATEGORY)),
         ratio = 4F,
         countOfReview = 200,
         prise = Price(150F, "22.02.21", 161.6F),

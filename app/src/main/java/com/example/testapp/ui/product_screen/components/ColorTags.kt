@@ -9,8 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.testapp.ui.product_screen.ItemTag
-import com.example.testapp.ui.product_screen.TagType
+import com.example.testapp.domain.entities.ItemTag
+import com.example.testapp.domain.entities.TagType
 import com.example.testapp.ui.theme.TestAppTheme
 
 @Composable

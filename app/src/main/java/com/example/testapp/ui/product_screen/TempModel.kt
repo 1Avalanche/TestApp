@@ -1,17 +1,8 @@
 package com.example.testapp.ui.product_screen
 
+import com.example.testapp.domain.entities.ItemTag
+
 class TempModel {
-}
-
-data class ItemTag(
-    val text: String,
-    val type: TagType
-)
-
-enum class TagType {
-    TOP,
-    CATEGORY,
-    COLOR_TYPE
 }
 
 data class ProductTitleWithMainInfo(

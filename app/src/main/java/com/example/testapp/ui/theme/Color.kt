@@ -2,12 +2,33 @@ package com.example.testapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val mainLightColor = TestAppColors(
+    mainBackground = Color.White,
+    mainText = Color(0xFF333333),
+    iconTint = Color(0xFF464C5C),
+    textSecond = Color(0xFF666666),
+    textMinor = Color(0xFF999999),
+    button = Color(0xFFE8E9EB),
+    tagTop = Color(0xFFD1DEFF),
+    tagTopText = Color(0xFF3D6BE3),
+    tagCategory= Color(0xFFFCF2DD),
+    tagColor= Color(0xFFFFE55A),
+    backgroundMinor = Color(0xFFE8E9EB)
+)
 
-val white = Color(0xFFFFFFFF)
+val mainDarkColor = TestAppColors(
+    mainBackground = Color.White,
+    mainText = Color(0xFF333333),
+    iconTint = Color(0xFF464C5C),
+    textSecond = Color(0xFF666666),
+    textMinor = Color(0xFF999999),
+    button = Color(0xFFE8E9EB),
+    tagTop = Color(0xFFD1DEFF),
+    tagTopText = Color(0xFF3D6BE3),
+    tagCategory= Color(0xFFFCF2DD),
+    tagColor= Color(0xFFFFE55A),
+    backgroundMinor = Color(0xFFE8E9EB)
+)
 
 
 

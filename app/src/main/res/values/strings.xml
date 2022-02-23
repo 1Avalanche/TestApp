@@ -1,14 +1,42 @@
 <resources>
     <string name="app_name">TestApp</string>
 
-    <string name="review1">%1$s отзывов</string>
-    <string name="review2">%1$s отзыв</string>
-    <string name="review3">%1$s отзыва</string>
 
 <!--    placeholders-->
     <string name="unknown_title">Назване неизвестно</string>
     <string name="unknown_vendorcode">Назване неизвестно</string>
     <string name="unknown_barcode">Назване неизвестно</string>
     <string name="unknown">неизвестно</string>
+
+    <!--    product menu point titles-->
+    <string name="menu_title_prise">Цена</string>
+    <string name="menu_title_storage">Запас</string>
+    <string name="menu_title_supplies">Поставки</string>
+    <string name="menu_title_sale_history">История продаж</string>
+    <string name="menu_subtitle_prise">с %1$s</string>
+    <string name="menu_subtitle_storage">Доступные товары</string>
+    <string name="menu_subtitle_supplies">Плановые и история поставокна</string>
+    <string name="menu_subtitle_sale_history">Продажи по магазину</string>
+    <string name="menu_storage_value">%1$s шт.</string>
+    <string name="menu_prise_value">%1$s Р/шт.</string>
+    <string name="menu_prise_subvalue">%1$s р</string>
+
+    <!--  titles-->
+    <string name="title_characters">Характеристики</string>
+    <string name="title_reviews">Отзывы</string>
+    <string name="title_similar_products">Аналогичные товары</string>
+    <string name="title_related_products">Комплементарные товары</string>
+
+    <!--  buttons text-->
+    <string name="button_show_all">Смотреть все</string>
+    <string name="button_collapse">Свернуть</string>
+
+    <!--  text subtitles-->
+    <string name="review1">%1$s отзывов</string>
+    <string name="review2">%1$s отзыв</string>
+    <string name="review3">%1$s отзыва</string>
+    <string name="based_on_1">На основе %1$s оценок</string>
+    <string name="based_on_2">На основе %1$s оценки</string>
+
 
 </resources>

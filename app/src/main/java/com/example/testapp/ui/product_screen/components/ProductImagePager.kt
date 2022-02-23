@@ -8,7 +8,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.testapp.ui.product_screen.ItemTag
+import com.example.testapp.domain.entities.ItemTag
 import com.example.testapp.ui.theme.TestAppTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -17,7 +17,7 @@ val imageList = listOf<Int>(com.example.testapp.R.drawable.item_photo, com.examp
 
 @ExperimentalPagerApi
 @Composable
-fun ItemPagerWithTags(imageList: List<Int>, tagsList: List<Pair<ItemTag?, ItemTag?>>) {
+fun ProductImagePager(imageList: List<Int>, tagsList: List<Pair<ItemTag?, ItemTag?>>) {
 
     Box(modifier = Modifier
         .padding(start = 18.dp, top = 22.dp, end = 18.dp, bottom = 16.dp)
@@ -43,7 +43,7 @@ fun ItemPagerWithTags(imageList: List<Int>, tagsList: List<Pair<ItemTag?, ItemTa
 @Composable
 fun ItemPagerWithTagsPreview() {
     TestAppTheme {
-        ItemPagerWithTags(imageList, list)
+        ProductImagePager(imageList, list)
     }
 }
 

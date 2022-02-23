@@ -36,24 +36,10 @@ class ProductPageViewModel @Inject constructor(
 
     }
 
+    fun getData() {
 
-//
-//    fun getData(productId: Int) {
-//        viewModelScope.launch {
-//            val dataList = mutableListOf<ProductPageData>()
-//
-//            val product = getProductInfoUseCase.invoke(productId)
-//            when (product) {
-//                is ResponseWrapper.Success -> {
-//                    product.value?.let {
-//                        dataList.add(
-//                            productMapper.productItemToProductItemEntity(it)
-//                        )
-//                    }
-//                }
-//                else -> {}
-//            }
-//
-//        }
-//    }
+    }
+
+
+
 }

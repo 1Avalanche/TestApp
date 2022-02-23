@@ -9,8 +9,9 @@ sealed class ProductPageViewState {
     object Loading : ProductPageViewState()
     object Error : ProductPageViewState()
     data class Display(
-        val productInfo: ProductItemEntity,
+        val productInfo: ProductItemModel,
         val similarProducts: List<SimilarProductEntity>?,
-        val relatedProducts: List<RelatedProductEntity>?
+        val relatedProducts: List<RelatedProductEntity>?,
+        var showAllCharacter: Boolean,
     ) : ProductPageViewState()
 }

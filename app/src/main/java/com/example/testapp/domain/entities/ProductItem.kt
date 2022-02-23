@@ -6,7 +6,7 @@ data class ProductItem(
     val vendorCode: String?,
     val barcode: String?,
     val imageList: List<Int>?,
-    val tagsList: List<String>?,
+    val tagsList: List<ItemTag>?,
     val ratio: Float?,
     val countOfReview: Int?,
     val prise: Price?,
