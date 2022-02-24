@@ -8,6 +8,8 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.testapp.ui.product_screen.components.Reviews
+import com.example.testapp.ui.product_screen.components.SimilarRelatedItem
 import com.example.testapp.ui.product_screen.components.imageList
 import com.example.testapp.ui.product_screen.components.list
 import com.example.testapp.ui.theme.TestAppTheme
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TestAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
+                Surface(color = TestAppTheme.colors.mainBackground) {
 
                 }
             }

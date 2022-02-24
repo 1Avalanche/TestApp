@@ -38,7 +38,7 @@ fun ProductPage(viewModel: ProductPageViewModel) {
         ProductPageViewState.Error -> viewModel.obtainEvent(ProductPageEvent.RefreshData)
         is ProductPageViewState.Display -> {
             LazyColumn(Modifier.fillMaxWidth()) {
-                item {  }
+                item { }
                 item { }
             }
         }

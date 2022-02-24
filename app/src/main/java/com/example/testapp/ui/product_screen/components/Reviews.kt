@@ -11,7 +11,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.testapp.R
+import com.example.testapp.TestApp
 import com.example.testapp.ui.theme.TestAppTheme
+import com.example.testapp.utils.PhraseUtils
 
 @Composable
 fun Reviews(ratio: Float, countOfReviews: Int) {
@@ -26,10 +28,11 @@ fun Reviews(ratio: Float, countOfReviews: Int) {
                     RatioRow(ratio, R.drawable.black_star, R.drawable.black_star_half, 16)
                 }
             }
-
-
-
+            Text(text = PhraseUtils.getSemanticTextBasedReview(countOfReviews),
+                style = TestAppTheme.typography.textWidget,
+                modifier = Modifier.padding(top = 7.dp))
         }
+        LinkButton(stringResource(id = R.string.button_show_all), { })
     }
 }
 
@@ -37,6 +40,7 @@ fun Reviews(ratio: Float, countOfReviews: Int) {
 @Composable
 fun ReviewReviews() {
     TestAppTheme {
-        Reviews(3.6F, 123)
+        Reviews(3.6F, 271)
     }
 }
+

@@ -72,7 +72,18 @@ fun TestAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composabl
             color = colors.mainText,
             fontWeight = FontWeight.Medium,
             fontFamily = SfProText
-        )
+        ),
+        textWidget = TextStyle(
+            fontSize = 15.sp,
+            color = colors.mainText,
+            fontWeight = FontWeight.Normal,
+            fontFamily = SfProText
+        ),
+        span = TextStyle(
+            fontSize = 16.sp,
+            color = colors.mainText,
+            fontWeight = FontWeight.Medium,
+        ),
     )
 
     CompositionLocalProvider(

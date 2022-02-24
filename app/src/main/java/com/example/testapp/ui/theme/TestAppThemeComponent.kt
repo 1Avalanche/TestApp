@@ -31,7 +31,9 @@ data class TestAppTypography (
     val subtitle3: TextStyle,
     val accent: TextStyle,
     val accentHint: TextStyle,
-    val onButton: TextStyle
+    val onButton: TextStyle,
+    val textWidget: TextStyle,
+    val span: TextStyle
 )
 
 object TestAppTheme {

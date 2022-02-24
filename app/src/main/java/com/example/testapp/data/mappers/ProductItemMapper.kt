@@ -3,8 +3,7 @@ package com.example.testapp.data.mappers
 import com.example.testapp.R
 import com.example.testapp.TestApp
 import com.example.testapp.data.entities.ProductItemEntity
-import com.example.testapp.data.entities.RelatedProductEntity
-import com.example.testapp.data.entities.SimilarProductEntity
+import com.example.testapp.data.entities.ProductWithCropInfo
 import com.example.testapp.domain.entities.ItemTag
 import com.example.testapp.domain.entities.ProductItem
 import com.example.testapp.ui.product_screen.model.ProductItemModel
@@ -29,19 +28,8 @@ object ProductItemMapper {
         )
     }
 
-    fun productItemToSimilarProductEntity(product: ProductItem) : SimilarProductEntity {
-        return SimilarProductEntity(
-            id = product.id,
-            title = product.title ?: TestApp().get()?.resources?.getString(R.string.unknown_title) ?: "",
-            vendorCode = product.vendorCode ?: TestApp().get()?.resources?.getString(R.string.unknown_vendorcode) ?: "",
-            image = product.imageList?.get(0) ?: R.drawable.item_placeholder,
-            priceForOne = product.prise?.priceForOne ?: -1F,
-            stockCount = product.stockCount ?: -1,
-        )
-    }
-
-    fun productItemToRelatedProduct(product: ProductItem) : RelatedProductEntity {
-        return RelatedProductEntity(
+    fun productItemToProductWithCropInfo(product: ProductItem) : ProductWithCropInfo {
+        return ProductWithCropInfo(
             id = product.id,
             title = product.title ?: TestApp().get()?.resources?.getString(R.string.unknown_title) ?: "",
             vendorCode = product.vendorCode ?: TestApp().get()?.resources?.getString(R.string.unknown_vendorcode) ?: "",

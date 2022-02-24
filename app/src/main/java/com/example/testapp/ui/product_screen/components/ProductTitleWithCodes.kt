@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.example.testapp.R
 import com.example.testapp.ui.product_screen.ProductTitleWithMainInfo
 import com.example.testapp.ui.theme.TestAppTheme
+import com.example.testapp.utils.PhraseUtils
 import kotlin.math.roundToInt
 
 @Composable
@@ -66,7 +67,7 @@ fun RatioAndReviews(ratio: Float, countReview: Int) {
     modifier = Modifier.padding(top = 14.dp)) {
         RatioRow(ratio, R.drawable.ic_star, R.drawable.ic_half_star, 14)
         if (countReview >= 0) {
-            Text(text = countReview.toString(),
+            Text(text = PhraseUtils.getReviewCounterSemanticString(countReview),
                 style = TestAppTheme.typography.subtitle1,
                 modifier = Modifier.padding(start = 4.dp))
         }
@@ -77,6 +78,6 @@ fun RatioAndReviews(ratio: Float, countReview: Int) {
 @Composable
 fun PreviewProductTitleWithCodes() {
     TestAppTheme {
-        ProductTitleWithCodes("Заголовок", "hjksdgjhjh", "3246 26243 246", 4.5F, 234)
+        ProductTitleWithCodes("Заголовок", "hjksdgjhjh", "3246 26243 246", 4.5F, 231)
     }
 }

@@ -38,5 +38,9 @@
     <string name="based_on_1">На основе %1$s оценок</string>
     <string name="based_on_2">На основе %1$s оценки</string>
 
+    <!-- postfix -->
+    <string name="postfix_prise">₽/шт.</string>
+    <string name="postfix_count">шт. доступно</string>
+
 
 </resources>
