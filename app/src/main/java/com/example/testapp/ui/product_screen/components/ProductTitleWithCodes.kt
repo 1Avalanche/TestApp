@@ -34,7 +34,7 @@ fun VendorCodeBarcode(vendorCode:String, barcode: String) {
     Row(verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
         .fillMaxWidth()
-        .padding(start = 2.dp, bottom = 8.dp)) {
+        .padding(bottom = 8.dp)) {
 
         Text(text = vendorCode,
             style = TestAppTheme.typography.subtitle2,
@@ -54,7 +54,7 @@ fun VendorCodeBarcode(vendorCode:String, barcode: String) {
         Icon(painter = painterResource(id = R.drawable.ic_arrow_down),
             contentDescription = "icon arrow down",
             modifier = Modifier
-                .padding(end = 4.dp)
+                .padding(start = 4.dp)
                 .align(Alignment.CenterVertically)
                 .clickable { })
     }

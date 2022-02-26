@@ -18,11 +18,12 @@ import com.example.testapp.utils.PhraseUtils
 @Composable
 fun Reviews(ratio: Float, countOfReviews: Int) {
     Column(modifier = Modifier.padding(top = 56.dp, start = 16.dp, end = 16.dp)) {
-        Text(text = stringResource(id = R.string.title_reviews), style = TestAppTheme.typography.h1)
+        Text(text = stringResource(id = R.string.title_reviews),
+             style = TestAppTheme.typography.h1)
         Column(modifier = Modifier.padding(top = 16.dp, bottom = 24.dp)) {
             Row(verticalAlignment = Alignment.Bottom) {
                 Text(text = ratio.toString().replace(".", ","),
-                style = TestAppTheme.typography.accent)
+                     style = TestAppTheme.typography.accent)
 
                 Row(modifier = Modifier.padding(8.dp)) {
                     RatioRow(ratio, R.drawable.black_star, R.drawable.black_star_half, 16)

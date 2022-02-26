@@ -19,7 +19,7 @@ import com.example.testapp.ui.theme.TestAppTheme
 import com.example.testapp.utils.PriceUtils
 
 @Composable
-fun SimilarRelatedItems(title: String, itemList: List<ProductWithCropInfo>) {
+fun SimilarRelatedItemsRow(title: String, itemList: List<ProductWithCropInfo>) {
     Column(modifier = Modifier.padding(top = 56.dp)) {
         Text(text = title, style = TestAppTheme.typography.h1,
              modifier = Modifier.padding(horizontal = 16.dp))

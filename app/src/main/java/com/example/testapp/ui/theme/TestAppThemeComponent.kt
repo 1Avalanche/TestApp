@@ -3,7 +3,6 @@ package com.example.testapp.ui.theme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
-import org.w3c.dom.Text
 import androidx.compose.ui.text.TextStyle
 
 data class TestAppColors(

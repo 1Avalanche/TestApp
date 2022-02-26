@@ -3,44 +3,37 @@ package com.example.testapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.testapp.ui.product_screen.components.Reviews
-import com.example.testapp.ui.product_screen.components.SimilarRelatedItem
-import com.example.testapp.ui.product_screen.components.imageList
-import com.example.testapp.ui.product_screen.components.list
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.testapp.ui.product_screen.ProductPage
+import com.example.testapp.ui.product_screen.ProductPageViewModel
 import com.example.testapp.ui.theme.TestAppTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     @ExperimentalPagerApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             TestAppTheme {
-                // A surface container using the 'background' color from the theme
+                val systemUiController = rememberSystemUiController()
+                SideEffect {
+                    systemUiController.setSystemBarsColor(
+                        color = Color.Transparent,
+                        darkIcons = true
+                    )
+                }
                 Surface(color = TestAppTheme.colors.mainBackground) {
-
+                    val productPageViewModel = hiltViewModel<ProductPageViewModel>()
+                    ProductPage(viewModel = productPageViewModel)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TestAppTheme {
-        Greeting("Android")
     }
 }

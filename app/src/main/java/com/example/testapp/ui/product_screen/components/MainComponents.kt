@@ -23,14 +23,16 @@ fun SpacerLine() {
 }
 
 @Composable
-fun LinkButton(text: String, onClick: () -> Unit) {
-    Button(onClick = { onClick },
+fun LinkButton(text: String, onClickFun: () -> Unit) {
+    Button(
         shape = CircleShape,
         colors = ButtonDefaults.buttonColors(TestAppTheme.colors.button, TestAppTheme.colors.mainText),
         modifier = Modifier
             .wrapContentSize()
-            .padding(top = 12.dp) ) {
+            .padding(top = 12.dp),
+                onClick = { onClickFun }) {
             Text(text = text, style = TestAppTheme.typography.onButton)
+
     }
 }
 

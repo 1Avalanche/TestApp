@@ -15,7 +15,7 @@
     <string name="menu_title_sale_history">История продаж</string>
     <string name="menu_subtitle_prise">с %1$s</string>
     <string name="menu_subtitle_storage">Доступные товары</string>
-    <string name="menu_subtitle_supplies">Плановые и история поставокна</string>
+    <string name="menu_subtitle_supplies">Плановые и история поставок</string>
     <string name="menu_subtitle_sale_history">Продажи по магазину</string>
     <string name="menu_storage_value">%1$s шт.</string>
     <string name="menu_prise_value">%1$s Р/шт.</string>

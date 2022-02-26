@@ -39,6 +39,16 @@ object ProductItemMapper {
         )
     }
 
+    fun productItemToProductWithCropInfo(products: List<ProductItem>?) : List<ProductWithCropInfo>? {
+        val list : MutableList<ProductWithCropInfo> = mutableListOf()
+        products?.let {
+            it.forEach { product ->
+                list.add(productItemToProductWithCropInfo(product))
+            }
+        }
+        return if (list.isEmpty()) null else list
+    }
+
     fun productItemToProductModel(product: ProductItem) : ProductItemModel {
         return ProductItemModel(
             id = product.id,
@@ -58,12 +68,26 @@ object ProductItemMapper {
     }
 
     private fun makeTagsList(tagsList: List<ItemTag>) : List<Pair<ItemTag?, ItemTag?>> {
-//        val tagsPairsList = mutableListOf<Pair<String?, String?>>()
         val tagsNullList = mutableListOf<ItemTag?>()
         tagsNullList.addAll(tagsList)
-        for (i in 0 until tagsNullList.size) {
-            if (tagsNullList[i]!!.text.length >= 12) tagsNullList.add(i+1, null)
+        var range = tagsNullList.size
+        for (i in 0 until range) {
+            tagsNullList[i]?.let {
+                if (it.text.length >=12) {
+                    tagsNullList.add(i + 1, null)
+                    range++
+                }
+            }
         }
-        return tagsNullList.zipWithNext()
+
+        val tagsPairsList = mutableListOf<Pair<ItemTag?, ItemTag?>>()
+        for (i in 0 until tagsNullList.size step 2) {
+            if (i < tagsNullList.lastIndex) {
+                tagsPairsList.add(Pair(tagsNullList[i], tagsNullList[i+1]))
+            } else {
+                tagsPairsList.add(Pair(tagsNullList[i], null))
+            }
+        }
+        return tagsPairsList
     }
 }

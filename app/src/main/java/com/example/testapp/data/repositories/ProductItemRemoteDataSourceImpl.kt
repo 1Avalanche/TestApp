@@ -30,16 +30,16 @@ object MockData {
         countOfReview = 275,
         prise = Price(1743F, "22.02.21", 161.6F),
         stockCount = 36,
-        character = listOf(Pair("Рельеф", "Структурный"), Pair("Цветовая палитра", "Оранжевый"), Pair("Покрытие", "Матовый"), Pair("Тип клея", "Флизелин")),
-        reviewList = listOf(Review("Bob Martin", "Good product! I like this color", 5))
+        character = listOf(Pair("Рельеф", "Структурный"), Pair("Цветовая палитра", "Оранжевый"), Pair("Покрытие", "Матовый"), Pair("Тип клея", "Флизелин"), Pair("Рельеф1", "Структурный"), Pair("Цветовая палитра1", "Оранжевый"), Pair("Покрытие1", "Матовый"), Pair("Тип клея1", "Флизелин")),
+        reviewList = listOf(Review("Robert Martin", "Good product! I like this color", 5))
     )
 
     val secondProduct = ProductItem(
         id = 1,
-        title = "Валик для водных красок",
+        title = "Валик для водных красок белый",
         vendorCode = "ЛМ 18218850",
         barcode = "4630 075 622 652",
-        imageList = listOf(com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo), //изменить
+        imageList = listOf(com.example.testapp.R.drawable.roller, com.example.testapp.R.drawable.item_photo, com.example.testapp.R.drawable.item_photo), //изменить
         tagsList = listOf(ItemTag("Гамма А",TagType.COLOR_TYPE), ItemTag("Топ - 1", TagType.TOP), ItemTag("12 - Отделочные материалы", TagType.CATEGORY)),
         ratio = 4F,
         countOfReview = 200,
@@ -50,7 +50,7 @@ object MockData {
     )
 
     val similarProducts = listOf(
-        firstProduct, firstProduct, firstProduct, secondProduct
+        firstProduct, firstProduct, firstProduct, firstProduct
     )
 
     val relatedProducts = listOf(secondProduct, secondProduct, secondProduct, secondProduct)

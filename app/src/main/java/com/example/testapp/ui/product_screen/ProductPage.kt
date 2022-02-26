@@ -1,23 +1,18 @@
 package com.example.testapp.ui.product_screen
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import com.example.testapp.ui.product_screen.components.imageList
-import com.example.testapp.ui.product_screen.components.list
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import com.example.testapp.R
+import com.example.testapp.ui.product_screen.components.ProductInfo
+import com.example.testapp.ui.product_screen.components.SimilarRelatedItemsRow
 import com.example.testapp.ui.product_screen.model.ProductPageEvent
 import com.example.testapp.ui.product_screen.model.ProductPageViewState
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -38,8 +33,22 @@ fun ProductPage(viewModel: ProductPageViewModel) {
         ProductPageViewState.Error -> viewModel.obtainEvent(ProductPageEvent.RefreshData)
         is ProductPageViewState.Display -> {
             LazyColumn(Modifier.fillMaxWidth()) {
-                item { }
-                item { }
+                item { ProductInfo(
+                    info = (state.value as ProductPageViewState.Display).productInfo,
+                    showAllCharacters = (state.value as ProductPageViewState.Display).showAllCharacter,
+                    viewModel = viewModel) }
+                (state.value as ProductPageViewState.Display).similarProducts?. let {
+                    item { SimilarRelatedItemsRow(
+                        title = stringResource(id = R.string.title_similar_products),
+                        itemList =it )}
+                }
+                (state.value as ProductPageViewState.Display).relatedProducts?. let {
+                    item { SimilarRelatedItemsRow(
+                        title = stringResource(id = R.string.title_related_products),
+                        itemList =it )}
+                }
+                item { Spacer(modifier = Modifier.fillMaxWidth().height(80.dp)) }
+
             }
         }
     }

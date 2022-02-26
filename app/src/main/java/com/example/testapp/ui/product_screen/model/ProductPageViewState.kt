@@ -7,7 +7,7 @@ sealed class ProductPageViewState {
     object Error : ProductPageViewState()
     data class Display(
         val productInfo: ProductItemModel,
-        val products: List<ProductWithCropInfo>?,
+        val similarProducts: List<ProductWithCropInfo>?,
         val relatedProducts: List<ProductWithCropInfo>?,
         var showAllCharacter: Boolean,
     ) : ProductPageViewState()

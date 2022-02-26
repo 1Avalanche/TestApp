@@ -2,6 +2,7 @@ package com.example.testapp.ui.product_screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -15,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.testapp.ui.theme.TestAppTheme
 import com.example.testapp.R
+import com.example.testapp.utils.PriceUtils
 
 @Composable
 fun ProductMenu(pricePerOne: Float, priceDate: String, secondPrice: Float, storageCount: Int) {
@@ -24,9 +26,10 @@ fun ProductMenu(pricePerOne: Float, priceDate: String, secondPrice: Float, stora
         ProductMenuPoint(
             R.drawable.ic_menu_price, 
             stringResource(id = R.string.menu_title_prise), 
-            stringResource(id = R.string.menu_prise_value, pricePerOne.toString()),
+            stringResource(id = R.string.menu_prise_value, PriceUtils.makePriceString(pricePerOne)),
             stringResource(id = R.string.menu_subtitle_prise, priceDate),
             stringResource(id = R.string.menu_prise_subvalue, secondPrice.toString()),
+            {}
         )
         SpacerLine()
         ProductMenuPoint(
@@ -34,7 +37,8 @@ fun ProductMenu(pricePerOne: Float, priceDate: String, secondPrice: Float, stora
             stringResource(id = R.string.menu_title_storage),
             stringResource(id = R.string.menu_storage_value, storageCount.toString()),
             stringResource(id = R.string.menu_subtitle_storage),
-            null
+            null,
+            {}
         )
         SpacerLine()
         ProductMenuPoint(
@@ -42,7 +46,8 @@ fun ProductMenu(pricePerOne: Float, priceDate: String, secondPrice: Float, stora
             stringResource(id = R.string.menu_title_supplies),
             null,
             stringResource(id = R.string.menu_subtitle_supplies),
-            null
+            null,
+            {}
         )
         SpacerLine()
         ProductMenuPoint(
@@ -50,13 +55,20 @@ fun ProductMenu(pricePerOne: Float, priceDate: String, secondPrice: Float, stora
             stringResource(id = R.string.menu_title_sale_history),
             null,
             stringResource(id = R.string.menu_subtitle_sale_history),
-            null
+            null,
+            {}
         )
     }
 }
 
 @Composable
-fun ProductMenuPoint(iconId: Int, itemText: String,  itemValue: String?, subtext: String, subvalue: String?) {
+fun ProductMenuPoint(
+    iconId: Int,
+    itemText: String,
+    itemValue: String?,
+    subtext: String,
+    subvalue: String?,
+    onItemClick: () -> Unit) {
     Row(horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
         .fillMaxWidth()
@@ -75,7 +87,8 @@ fun ProductMenuPoint(iconId: Int, itemText: String,  itemValue: String?, subtext
             }
         }
 
-        Row(horizontalArrangement = Arrangement.End) {
+        Row(horizontalArrangement = Arrangement.End,
+            modifier = Modifier.clickable { onItemClick }) {
             Column(horizontalAlignment = Alignment.End,
                 modifier = Modifier.padding(end = 14.dp)) {
                 itemValue?.let { Text(text = it, style = TestAppTheme.typography.h2) }

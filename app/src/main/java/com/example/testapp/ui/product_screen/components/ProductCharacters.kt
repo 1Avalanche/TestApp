@@ -1,9 +1,9 @@
 package com.example.testapp.ui.product_screen.components
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,22 +18,32 @@ import com.example.testapp.ui.theme.TestAppTheme
 
 @Composable
 fun ProductCharacters(characters: List<Pair<String, String>>, showAllCharacters: Boolean, viewModel: ProductPageViewModel?) {
+
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(start = 16.dp, top = 56.dp, end = 16.dp)) {
 
         Text(text=stringResource(id = R.string.title_characters),
             style = TestAppTheme.typography.h1,
-        modifier = Modifier.padding(bottom = 4.dp))
+            modifier = Modifier.padding(bottom = 4.dp))
 
         for (character in characters) {
             Character(character = character)
             if (character != characters.last()) SpacerLine()
         }
 
-        LinkButton(text = if (showAllCharacters) stringResource(id = R.string.button_collapse)
-                            else stringResource(id = R.string.button_show_all)
-        ) { viewModel?.obtainEvent(ProductPageEvent.ShowAllCharacter) }
+        Button(
+            shape = CircleShape,
+            colors = ButtonDefaults.buttonColors(TestAppTheme.colors.button, TestAppTheme.colors.mainText),
+            modifier = Modifier
+                .wrapContentSize()
+                .padding(top = 12.dp),
+            onClick = { viewModel?.obtainEvent(ProductPageEvent.ChangeShowAllCharacters)}) {
+            Text(text = if (showAllCharacters) stringResource(id = R.string.button_collapse)
+                        else stringResource(id = R.string.button_show_all),
+                style = TestAppTheme.typography.onButton)
+
+        }
     }
 }
 
